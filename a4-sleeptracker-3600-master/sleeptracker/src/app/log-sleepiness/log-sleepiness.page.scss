@@ -1,0 +1,46 @@
+ion-range {
+  --bar-background:#3a3a3a;
+  --bar-background-active: #0059ff;
+  --bar-height: 4px;
+  --bar-border-radius: 8px;
+  --knob-background: #ff0000;
+  --knob-size: 20px;
+  --knob-color: #ff0000;
+  --pin-background: #ff0000;
+  --pin-color: #ff0000;
+
+}
+
+:host {
+  ion-content {
+    --background:  #ffffff;
+    color: #000000;
+  }
+
+  ion-header {
+    --background: #3a3a3a;
+    color: #ffffff;
+  }
+
+  ion-item {
+    --background:  #ffffff;
+    color: #000000;
+  }
+
+  ion-modal {
+    --background:  #3a3a3a;
+    color: #ffffff;
+  }
+
+  ion-tab-bar {
+    --background: #3a3a3a;
+  }
+  ion-label {
+    color: #ffffff;
+  }
+
+  ion-toolbar {
+    --background: #3a3a3a;
+    color: #ffffff;
+  }
+}

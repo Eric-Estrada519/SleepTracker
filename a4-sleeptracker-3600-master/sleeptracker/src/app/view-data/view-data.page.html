@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title size="medium" class="ion-padding-vertical" style="text-align: center">view data</ion-title>
+    </ion-toolbar>
+
+<!-- This makes the segment tabs   -->
+    <ion-segment style="--background: #3a3a3a; color: #ffffff;">
+      <ion-segment-button value="first" content-id="first">
+        <ion-label>view sleepiness data</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="second" content-id="second">
+        <ion-label>view overnight sleep data</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <!-- This displays the data when a segment tag is chosen   -->
+    <ion-segment-view style="--background: #3a3a3a; color: #ffffff;">
+      <ion-segment-content id="first">
+        <ion-list>
+          <ion-item *ngFor="let data of sleepinessData">
+            <ion-label >
+              {{data.dateString()}};
+              {{data.summaryString()}};
+            </ion-label>
+            <ion-button fill="clear" color="danger" (click)="deleteSleep(data.id)">delete </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-segment-content>
+
+      <ion-segment-content id="second">
+        <ion-list>
+          <ion-item *ngFor="let data of overnightData">
+            <ion-label >
+              {{data.dateString()}};
+              {{data.summaryString()}};
+            </ion-label>
+            <ion-button fill="clear" color="danger" (click)="deleteOvernight(data.id)">delete </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-segment-content>
+
+    </ion-segment-view>
+  </ion-header>
+
+  <!-- tabs to navigate areas   -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button  href="/home">
+        <ion-label>Log Data</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button  href="/view-data">
+        <ion-label>View Data</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button href="/log-sleepiness">
+        <ion-label>log sleepiness</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>
